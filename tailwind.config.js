@@ -8,14 +8,13 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
-
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
-        },
+            colors: {
+                darkbg: '#0f0f0f',
+                darkbg2: '#272727   ',
+            }
+        }
     },
-
-    plugins: [forms],
+    plugins: [require('@tailwindcss/forms')],
 };
