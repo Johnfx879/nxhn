@@ -27,27 +27,37 @@
                                 <th scope="col" class="px-6 py-3">
                                     Updated At
                                 </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Action
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
-                                <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                        {{ $user->name }}
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        {{ $user->email }}
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        {{ $user->email_verified_at }}
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        {{ $user->created_at }}
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        {{ $user->updated_at }}
-                                    </td>
-                                </tr>
+                            <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
+                                <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                    {{ $user->name }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ $user->email }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ $user->email_verified_at }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ $user->created_at }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ $user->updated_at }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-600 hover:text-red-900">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
