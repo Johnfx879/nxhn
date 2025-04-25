@@ -1,16 +1,16 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-100 leading-tight">
+        <h2 class="font-semibold text-xl text-white leading-tight">
             {{ __('Manage Users') }}
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 bg-darkbg text-white min-h-screen">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="bg-white dark:bg-gray-800 relative overflow-x-auto shadow-md sm:rounded-lg mb-4">
-                    <table class="w-full text-sm text-left text-gray-700 dark:text-gray-200">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-200">
+                <div class="bg-darkbg2 relative overflow-x-auto shadow-md sm:rounded-lg mb-4">
+                    <table class="w-full text-sm text-left text-gray-300">
+                        <thead class="text-xs uppercase bg-[#1f1f1f] text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
                                     Name
@@ -34,8 +34,8 @@
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
-                            <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
-                                <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                            <tr class="odd:bg-darkbg2 even:bg-[#1f1f1f] border-b border-[#333]">
+                                <td class="px-6 py-4 font-medium text-white whitespace-nowrap">
                                     {{ $user->name }}
                                 </td>
                                 <td class="px-6 py-4">
