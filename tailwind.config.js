@@ -12,7 +12,10 @@ export default {
         extend: {
             colors: {
                 darkbg: '#0f0f0f',
-                darkbg2: '#272727   ',
+                darkbg2: '#272727',
+            },
+                blue: {
+                    500: '#1e90ff',
             }
         }
     },
